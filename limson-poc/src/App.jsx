@@ -1,17 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+
+import ReusableGrid from "./components/ReusableGrid";
+import sampleData from "./data/sampleData";
+import { tabs } from "./config/tabsConfig";
+import { columns } from "./config/commonColumns";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedTab, setSelectedTab] = useState(tabs[0]);
+
+  const columnDefs = selectedTab.columnKeys.map(
+    (key) => columns[key]
+  );
 
   return (
-    <>
-     <h1>Hello World</h1>
-    </>
-  )
+    <div className="app">
+      <h1 className="title">Limson POC</h1>
+
+      <div className="tab-container">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            className={`tab-btn ${
+              selectedTab.id === tab.id ? "active" : ""
+            }`}
+            onClick={() => setSelectedTab(tab)}
+          >
+            {tab.title}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid-card">
+        <ReusableGrid
+          rowData={sampleData}
+          columnDefs={columnDefs}
+        />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
