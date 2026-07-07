@@ -1,17 +1,21 @@
 .header {
-  height: 70px;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  border-bottom: 1px solid #e5e5e5;
+    height: 60px;
+    margin: 8px 10px 0;
+    padding: 0 20px;
+
+    background: #436b63;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.header-left {
-  width: 120px;
-  display: flex;
-  align-items: center;
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
 }
 
 .logo-placeholder {
@@ -22,40 +26,56 @@
 }
 
 .header-nav {
-  display: flex;
-  gap: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the menu items */
+    flex: 1;                 /* Take the available space */
+    gap: 8px;
 }
 
 .header-nav a {
-  text-decoration: none;
-  color: #555;
-  font-weight: 600;
-  padding: 22px 0;
-  transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;          /* Important */
+    padding: 0 14px;       /* Remove vertical padding */
+
+    gap: 6px;
+
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    border-radius: 4px;
+
+    box-sizing: border-box;
 }
 
 .nav-icon {
   font-size: 18px;
-  vertical-align: middle;
   margin-right: 5px;
-  transform: translateY(-1px);
 }
 
-.header-nav a:hover,
-.header-nav .active {
-  color: #2d6a5f;
-  border-bottom: 3px solid #2d6a5f;
+.header-nav a.active {
+    background: #d8e52f;
+    color: #2d5149;
 }
 
-.header-right {
-  display: flex;
-  gap: 20px;
+.header-nav a:hover {
+    background: rgba(255,255,255,.08);
 }
+
 
 .icon {
-  font-size: 20px;
-  color: #555;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    color: #fff;
 }
 
 .icon:hover {
